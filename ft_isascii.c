@@ -6,18 +6,19 @@
 /*   By: mdchowdh <mdchowdh@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 18:04:34 by mdchowdh          #+#    #+#             */
-/*   Updated: 2025/07/09 18:29:19 by mdchowdh         ###   ########.fr       */
+/*   Updated: 2025/07/16 15:12:57 by mdchowdh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_isascii(int c)
 {
-	if (c >= 0 && c <= 255)
-			return (1);
-	else
-			return (0);
+	if (c >= 0 && c <= 127)
+		return (1);
+	return (0);
 }
-#include <stdio.h>
+/* #include <stdio.h>
 #include <ctype.h>
 
 int	main (void)
@@ -33,4 +34,4 @@ int	main (void)
 	printf ("%d\n", isascii(b));
 	printf ("%d\n", isascii(d));
 	return (0);
-}
+} */

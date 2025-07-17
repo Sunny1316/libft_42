@@ -6,32 +6,18 @@
 /*   By: mdchowdh <mdchowdh@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 19:57:09 by mdchowdh          #+#    #+#             */
-/*   Updated: 2025/07/14 15:58:35 by mdchowdh         ###   ########.fr       */
+/*   Updated: 2025/07/16 14:59:12 by mdchowdh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stddef.h>
-
-void	*ft_memset(void *b, int c, size_t len)
-{
-	unsigned char	*ptr;
-	ptr = (unsigned char *)b;
-	while ( len > 0)
-	{
-		*ptr = (unsigned char)c;
-		ptr++;
-		len--;
-	}
-	return (b);
-}
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 
 {
 	ft_memset(s, 0 , n);
 }
-
-#include <stdio.h>
+/* #include <stdio.h>
 #include <string.h>
 int	main (void)
 {
@@ -42,4 +28,4 @@ int	main (void)
     printf("%s\n", a);
 	printf ("%s\n", a);
 	return (0);
-}
+} */

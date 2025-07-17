@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdchowdh <mdchowdh@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/12 19:57:21 by mdchowdh          #+#    #+#             */
-/*   Updated: 2025/07/16 22:41:05 by mdchowdh         ###   ########.fr       */
+/*   Created: 2025/07/17 13:05:25 by mdchowdh          #+#    #+#             */
+/*   Updated: 2025/07/17 13:08:38 by mdchowdh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(const char *str)
-
+int	ft_tolower(int c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
+	if (c >= 'A' && c <= 'Z')
 	{
-		i++;
+		return (c + 32);
 	}
-	return (i);
+	return (c);
 }
-// #include <stdio.h>
-// int main(void)
-// {
-//    int j;
-//     char  str[] = "";
+#include <stdio.h>
+#include <ctype.h> 
+int main(void)
+{
+    int c = 65;
 
-//    j= ft_strlen(str);
-//     printf("value of j = %d\n",j);
-// }
+    printf("Original tolower: %c -> %c\n", c, tolower(c));
+    printf("My ft_tolower   : %c -> %c\n", c, ft_tolower(c));
+
+    return 0;
+}

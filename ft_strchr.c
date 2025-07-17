@@ -1,38 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdchowdh <mdchowdh@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/09 16:15:52 by mdchowdh          #+#    #+#             */
-/*   Updated: 2025/07/16 15:00:11 by mdchowdh         ###   ########.fr       */
+/*   Created: 2025/07/17 13:17:59 by mdchowdh          #+#    #+#             */
+/*   Updated: 2025/07/17 13:51:10 by mdchowdh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+char	*ft_strchr(const char *s, int c)
 {
-	if (c >= 32 && c < 127)
-			return (1);
-	else
-			return (0);
+    while (*s)
+    {
+        if (*s == (char)c)
+            return (char *)s;
+        s++;
+    }
+    if ((char)c == '\0')
+        return (char *)s;
+    return NULL;
 }
 /* #include <stdio.h>
-#include <ctype.h>
-
-int	main (void)
+int main(void)
 {
-	char	a = 'a';
-	char	b = 'B';
-	char	d = ' ';
+    const char *text = "Hello, world!";
+    char *result = ft_strchr(text, 'w');
 
-	printf ("%d\n", ft_isprint(a));
-	printf ("%d\n", ft_isprint(b));
-	printf ("%d\n", ft_isprint(d));
-    printf ("%d\n", isprint(a));
-	printf ("%d\n", isprint(b));
-	printf ("%d\n", isprint(d));
-	return (0);
+    if (result)
+        printf("Found 'w' at : %s\n", result);  
+    else
+        printf("'z' not found. %s\n", result);
+
+    return 0;
 } */

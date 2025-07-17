@@ -6,9 +6,11 @@
 /*   By: mdchowdh <mdchowdh@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 16:12:18 by mdchowdh          #+#    #+#             */
-/*   Updated: 2025/07/12 18:53:24 by mdchowdh         ###   ########.fr       */
+/*   Updated: 2025/07/16 15:00:03 by mdchowdh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isdigit(int c)
 {
@@ -17,7 +19,7 @@ int	ft_isdigit(int c)
 	else
 			return (0);
 }
-#include <stdio.h>
+/* #include <stdio.h>
 
 int	main (void)
 {
@@ -29,4 +31,4 @@ int	main (void)
 	printf ("%d\n", ft_isdigit(b));
 	printf ("%d\n", ft_isdigit(d));
 	return (0);
-}
+} */

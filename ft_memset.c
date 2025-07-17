@@ -6,11 +6,11 @@
 /*   By: mdchowdh <mdchowdh@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 15:20:09 by mdchowdh          #+#    #+#             */
-/*   Updated: 2025/07/14 15:38:30 by mdchowdh         ###   ########.fr       */
+/*   Updated: 2025/07/16 15:00:40 by mdchowdh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stddef.h>
+#include "libft.h"
 
 void	*ft_memset(void *b, int c, size_t len)
 {
@@ -24,16 +24,16 @@ void	*ft_memset(void *b, int c, size_t len)
 	}
 	return (b);
 }
-#include <stdio.h>
+/* #include <stdio.h>
 #include <string.h>
 int	main (void)
 {
 	char b[30] = "Hello World!";
 
-	printf ("%s\n", ft_memset(b , 0 , 5));
-	printf ("%s\n", memset(b , 0 , 5));
+	printf ("%s\n",(char *)ft_memset(b , 65 , 5));
+	printf ("%s\n", (char *)memset(b , 65 , 5));
 	return (0);
-}
+} */
 /* N.B1:
 The ft_memset function is used to set a block of memory to a specific value. Let’s break down the prototype:
 void *memset(void *b, int c, size_t len);
