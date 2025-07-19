@@ -6,7 +6,7 @@
 /*   By: mdchowdh <mdchowdh@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 11:30:15 by mdchowdh          #+#    #+#             */
-/*   Updated: 2025/07/17 12:34:05 by mdchowdh         ###   ########.fr       */
+/*   Updated: 2025/07/17 16:50:20 by mdchowdh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dst[dst_l + i] = '\0';
 	return (src_l);
 }
-#include <stdio.h>
+/* #include <stdio.h>
 #include <string.h>
-int main(void)
+int main(void) */
 /* {
     char dest1[30] = "Hello, ";
     char dest2[30] = "Hello, ";
@@ -60,7 +60,7 @@ int main(void)
 
     return 0;
 } */
-{
+/* {
     char dest1[10] = "1234";  // 4 chars + '\0' = 5 used
     char dest2[10] = "1234";
     char src[] = "abcdef";    // 6 chars
@@ -82,4 +82,4 @@ int main(void)
         printf( "Edge case failed. Mismatch in return value or string.\n");
 
     return 0;
-}
+} */

@@ -6,7 +6,7 @@
 /*   By: mdchowdh <mdchowdh@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 12:48:37 by mdchowdh          #+#    #+#             */
-/*   Updated: 2025/07/17 13:13:28 by mdchowdh         ###   ########.fr       */
+/*   Updated: 2025/07/17 16:48:53 by mdchowdh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_toupper(int c)
 	}
 	return (c);
 }
-#include <stdio.h>
+/* #include <stdio.h>
 #include <ctype.h> 
 int main(void)
 {
@@ -30,4 +30,4 @@ int main(void)
     printf("My ft_toupper   : %c -> %c\n", c, ft_toupper(c));
 
     return 0;
-}
+} */
