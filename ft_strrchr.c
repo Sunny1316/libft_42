@@ -6,7 +6,7 @@
 /*   By: mdchowdh <mdchowdh@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 14:03:08 by mdchowdh          #+#    #+#             */
-/*   Updated: 2025/07/17 14:29:52 by mdchowdh         ###   ########.fr       */
+/*   Updated: 2025/07/20 18:13:12 by mdchowdh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,47 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-char	*p;
+	int	i;
 
-	p = NULL;
-	while (*s != '\0')
+	if (!s)
+		return (NULL);
+	i = ft_strlen(s);
+	while (i >= 0)
 	{
-		if (*s == c)
-			p = (char *)s;
-		s++;
+		if (s[i] == (unsigned char)c)
+			return ((char *)&s[i]);
+		if (i == 0)
+			break;
+		i--;
 	}
-	if (c == '\0')
-		return ((char *)s);
-	return (p);
+	return (NULL);
 }
+/* {
+	int	i;
+
+	if (!s)
+		return (NULL);
+	i = ft_strlen(s);
+	while (i >= 0)
+	{
+		if (s[i] == (unsigned char)c)
+			return ((char *)&s[i]);
+		i--;
+	}
+	return (NULL);
+} */
 /* #include <stdio.h>
 #include <string.h>
 int main(void)
 {
     const char *text = "Hello, world!";
-    char *my_result = ft_strrchr(text, 'o');
-    char *lib_result = strrchr(text, 'o');
+    char *my_result = ft_strrchr(text,'\0');
+    char *lib_result = strrchr(text,'\0' );
 
     if (my_result && lib_result)
        {
-        printf("my_result:Found last 'o' at : %s\n", my_result); 
-        printf("lib_result:Found last 'o' at : %s\n", lib_result); 
+        printf("my_result:Found last 'o' at : %p\n", my_result); 
+        printf("lib_result:Found last 'o' at : %p\n", lib_result); 
        }  
     else if(!my_result && !lib_result)
         {
