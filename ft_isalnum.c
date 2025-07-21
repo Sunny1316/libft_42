@@ -6,7 +6,7 @@
 /*   By: mdchowdh <mdchowdh@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 18:18:21 by mdchowdh          #+#    #+#             */
-/*   Updated: 2025/07/16 14:59:31 by mdchowdh         ###   ########.fr       */
+/*   Updated: 2025/07/21 15:35:26 by mdchowdh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isalnum(int c)
 {
-	if ((c >= '0' && c <= '9') || (c >= 'a' && c <= 'z')||(c >= 'A' && c <= 'Z'))
+	if (ft_isdigit(c) || ft_isalpha(c))
 			return (1);
 	else
 			return (0);

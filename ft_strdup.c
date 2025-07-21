@@ -6,7 +6,7 @@
 /*   By: mdchowdh <mdchowdh@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 11:21:09 by mdchowdh          #+#    #+#             */
-/*   Updated: 2025/07/19 11:22:55 by mdchowdh         ###   ########.fr       */
+/*   Updated: 2025/07/21 14:44:31 by mdchowdh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char	*ft_strdup(const char *s1)
 /* #include <stdio.h>
 int main(void)
 {
-	char *s = ft_strdup("42 Heilbronn!");
+	char *s = ft_strdup("0");
 	printf("%s\n", s);
 	free(s);
 	return 0;

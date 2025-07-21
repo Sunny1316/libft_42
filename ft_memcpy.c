@@ -6,7 +6,7 @@
 /*   By: mdchowdh <mdchowdh@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 14:37:41 by mdchowdh          #+#    #+#             */
-/*   Updated: 2025/07/21 16:06:38 by mdchowdh         ###   ########.fr       */
+/*   Updated: 2025/07/21 22:26:53 by mdchowdh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 		*d++ = *s++;
 	return (dst);
 }
-#include <stdio.h>
+/* #include <stdio.h>
 #include <string.h>
-
 int main(void)
 {
   char str1[] = "This is a test string";
@@ -43,4 +42,4 @@ int main(void)
   memcpy(str2 + 5, str2 + 8, len2 - 8 + 1);
   printf("Modified str2 for memcpy: %s\n", str2);
   return 0;
-}
+} */

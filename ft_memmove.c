@@ -6,7 +6,7 @@
 /*   By: mdchowdh <mdchowdh@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 15:35:07 by mdchowdh          #+#    #+#             */
-/*   Updated: 2025/07/21 16:07:28 by mdchowdh         ###   ########.fr       */
+/*   Updated: 2025/07/21 22:26:36 by mdchowdh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 }
 /* #include <stdio.h>
 #include <string.h>
-
 int main(void)
 {
   char str1[] = "This is a test string";
