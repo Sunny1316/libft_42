@@ -6,7 +6,7 @@
 /*   By: mdchowdh <mdchowdh@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/20 15:28:11 by mdchowdh          #+#    #+#             */
-/*   Updated: 2025/07/20 15:30:50 by mdchowdh         ###   ########.fr       */
+/*   Updated: 2025/07/21 15:41:57 by mdchowdh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,45 +14,58 @@
 
 static int	ft_intlen(int n)
 {
-	int	len = 1;
-	if (n < 0)
-		len++; 
-	while (n / 10)
+	int		len ;
+	long	num;
+
+	len = 0;
+	num = n;
+	if (num < 0)
 	{
+		num *= -1;
 		len++;
-		n /= 10;
+	}
+	while (num > 0)
+	{
+		num = num / 10;
+		len++;
 	}
 	return (len);
 }
 
-char	*ft_itoa(int n)
+static char	*ft_itostr(char *s, int n)
 {
-	char	*str;
 	int		len;
-	long	num; 
-	int		sign = 1;
+	long	num;
+	char	*p;
 
 	num = n;
+	len = ft_intlen(n);
+	p = s;
+	p[len] = '\0';
 	if (num < 0)
 	{
-		sign = -1;
-		num = -num;
+		*s = '-';
+		num *= -1;
 	}
-	len = ft_intlen(n);
-	str = (char *)malloc(len + 1);
-	if (!str)
-		return (NULL);
-	str[len] = '\0';
-	while (len--)
+	while (num > 0)
 	{
-		str[len] = '0' + (num % 10);
-		num /= 10;
-		if (len == 1 && sign == -1)
-			break;
+		len--;
+		p[len] = '0' + (num % 10);
+		num = num / 10;
 	}
-	if (sign == -1)
-		str[0] = '-';
-	return (str);
+	return (s);
+}
+
+char	*ft_itoa(int n)
+{
+	char	*s;
+
+	if (n == 0)
+		return (ft_strdup("0"));
+	s = malloc(sizeof(char) * (ft_intlen(n) + 1));
+	if (!s)
+		return (NULL);
+	return (ft_itostr(s, n));
 }
 /* #include <stdio.h>
 int main(void)
