@@ -6,7 +6,7 @@
 /*   By: mdchowdh <mdchowdh@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 15:35:07 by mdchowdh          #+#    #+#             */
-/*   Updated: 2025/07/16 16:04:20 by mdchowdh         ###   ########.fr       */
+/*   Updated: 2025/07/21 16:07:28 by mdchowdh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,22 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 		ft_memcpy(dst, src, n);
 	return (dst);
 }
-/*  #include <string.h>
- #include <stdio.h>
+/* #include <stdio.h>
+#include <string.h>
 
- int main(void)
- {
+int main(void)
+{
+  char str1[] = "This is a test string";
+  int len1 = strlen(str1);
+  char str2[] = "This is a test string";
+  int len2 = strlen(str1);
 
-    return(0);
- }
-  */
+  printf("Original str1: %s\n", str1);
+  ft_memmove(str1 + 5, str1 + 8, len1 - 8 + 1);
+  printf("Modified str1 for ft_memmove: %s\n", str1);
+
+  printf("Original str2: %s\n", str2);
+  memmove(str2 + 5, str2 + 8, len2 - 8 + 1);
+  printf("Modified str2 for memmove: %s\n", str2);
+  return 0;
+} */
