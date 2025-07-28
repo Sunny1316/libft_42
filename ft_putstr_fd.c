@@ -6,7 +6,7 @@
 /*   By: mdchowdh <mdchowdh@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/20 16:09:01 by mdchowdh          #+#    #+#             */
-/*   Updated: 2025/07/20 16:10:29 by mdchowdh         ###   ########.fr       */
+/*   Updated: 2025/07/28 14:25:54 by mdchowdh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_putstr_fd(char *s, int fd)
 {
 	if (!s)
-		return;
+		return ;
 	write(fd, s, ft_strlen(s));
 }
 /* int main(void)

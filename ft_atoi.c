@@ -6,7 +6,7 @@
 /*   By: mdchowdh <mdchowdh@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 10:15:31 by mdchowdh          #+#    #+#             */
-/*   Updated: 2025/07/19 10:41:21 by mdchowdh         ###   ########.fr       */
+/*   Updated: 2025/07/28 11:34:51 by mdchowdh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ int	ft_atoi(const char *str)
 	int	result;
 	int	sign;
 
-    result = 0;
-    sign = 1;
+	result = 0;
+	sign = 1;
 	while (*str == ' ' || *str == '\t' || *str == '\n'
 		|| *str == '\r' || *str == '\v' || *str == '\f')
 		str++;

@@ -6,7 +6,7 @@
 /*   By: mdchowdh <mdchowdh@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 16:15:52 by mdchowdh          #+#    #+#             */
-/*   Updated: 2025/07/16 15:00:11 by mdchowdh         ###   ########.fr       */
+/*   Updated: 2025/07/28 12:10:16 by mdchowdh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 int	ft_isprint(int c)
 {
 	if (c >= 32 && c < 127)
-			return (1);
+		return (1);
 	else
-			return (0);
+		return (0);
 }
 /* #include <stdio.h>
 #include <ctype.h>

@@ -6,7 +6,7 @@
 /*   By: mdchowdh <mdchowdh@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/20 15:51:27 by mdchowdh          #+#    #+#             */
-/*   Updated: 2025/07/20 16:00:56 by mdchowdh         ###   ########.fr       */
+/*   Updated: 2025/07/28 14:36:13 by mdchowdh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	unsigned int	i;
 
 	if (!s || !f)
-		return;
+		return ;
 	i = 0;
 	while (s[i])
 	{
@@ -30,7 +30,7 @@ void to_upper(unsigned int i, char *c)
 {
     (void)i;
     if (*c >= 'a' && *c <= 'z')
-        *c = *c - 32; 
+        *c = *c - 32;
 }
 int main(void)
 {

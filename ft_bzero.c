@@ -6,7 +6,7 @@
 /*   By: mdchowdh <mdchowdh@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 19:57:09 by mdchowdh          #+#    #+#             */
-/*   Updated: 2025/07/16 14:59:12 by mdchowdh         ###   ########.fr       */
+/*   Updated: 2025/07/28 11:36:31 by mdchowdh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_bzero(void *s, size_t n)
 
 {
-	ft_memset(s, 0 , n);
+	ft_memset(s, 0, n);
 }
 /* #include <stdio.h>
 #include <string.h>

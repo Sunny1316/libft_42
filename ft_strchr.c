@@ -6,7 +6,7 @@
 /*   By: mdchowdh <mdchowdh@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 13:17:59 by mdchowdh          #+#    #+#             */
-/*   Updated: 2025/07/17 13:51:10 by mdchowdh         ###   ########.fr       */
+/*   Updated: 2025/07/28 14:34:46 by mdchowdh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,26 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-    while (*s)
-    {
-        if (*s == (char)c)
-            return (char *)s;
-        s++;
-    }
-    if ((char)c == '\0')
-        return (char *)s;
-    return NULL;
+	while (*s)
+	{
+		if (*s == (char)c)
+			return ((char *)s);
+		s++;
+	}
+	if ((char)c == '\0')
+		return ((char *)s);
+	return (NULL);
 }
 /* #include <stdio.h>
 int main(void)
 {
-    const char *text = "Hello, world!";
-    char *result = ft_strchr(text, 'w');
+	const char *text = "Hello, world!";
+	char *result = ft_strchr(text, 'w');
 
-    if (result)
-        printf("Found 'w' at : %s\n", result);  
-    else
-        printf("'z' not found. %s\n", result);
+	if (result)
+		printf("Found 'w' at : %s\n", result);
+	else
+		printf("'z' not found. %s\n", result);
 
-    return 0;
+	return 0;
 } */

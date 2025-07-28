@@ -6,7 +6,7 @@
 /*   By: mdchowdh <mdchowdh@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 11:21:09 by mdchowdh          #+#    #+#             */
-/*   Updated: 2025/07/21 14:44:31 by mdchowdh         ###   ########.fr       */
+/*   Updated: 2025/07/28 14:35:35 by mdchowdh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,8 @@ char	*ft_strdup(const char *s1)
 	char	*dup;
 	int		i ;
 
-    len = 0;
-    i = 0;
-
+	len = 0;
+	i = 0;
 	while (s1[len])
 		len++;
 	dup = (char *)malloc(len + 1);

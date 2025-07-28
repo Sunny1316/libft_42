@@ -6,7 +6,7 @@
 /*   By: mdchowdh <mdchowdh@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 16:12:18 by mdchowdh          #+#    #+#             */
-/*   Updated: 2025/07/16 15:00:03 by mdchowdh         ###   ########.fr       */
+/*   Updated: 2025/07/28 12:09:53 by mdchowdh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
-			return (1);
+		return (1);
 	else
-			return (0);
+		return (0);
 }
 /* #include <stdio.h>
 

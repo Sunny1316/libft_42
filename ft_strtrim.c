@@ -6,7 +6,7 @@
 /*   By: mdchowdh <mdchowdh@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/20 14:35:26 by mdchowdh          #+#    #+#             */
-/*   Updated: 2025/07/21 16:19:52 by mdchowdh         ###   ########.fr       */
+/*   Updated: 2025/07/28 14:40:17 by mdchowdh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	if (!s1 || !set)
 		return (NULL);
-    start = 0;
+	start = 0;
 	end = ft_strlen(s1);
 	while (s1[start] && is_in_set(s1[start], set))
 		start++;

@@ -6,7 +6,7 @@
 /*   By: mdchowdh <mdchowdh@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 09:25:14 by mdchowdh          #+#    #+#             */
-/*   Updated: 2025/07/19 10:02:57 by mdchowdh         ###   ########.fr       */
+/*   Updated: 2025/07/28 14:39:42 by mdchowdh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t i;
-	size_t j;
+	size_t	i;
+	size_t	j;
 
 	if (!*needle)
 		return ((char *)haystack);

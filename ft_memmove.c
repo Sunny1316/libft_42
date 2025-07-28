@@ -6,7 +6,7 @@
 /*   By: mdchowdh <mdchowdh@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 15:35:07 by mdchowdh          #+#    #+#             */
-/*   Updated: 2025/07/21 22:26:36 by mdchowdh         ###   ########.fr       */
+/*   Updated: 2025/07/28 14:17:20 by mdchowdh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 		s += n;
 		while (n--)
 		{
-    		d--;
-    		s--;
-    	*d = *s;
+			d--;
+			s--;
+			*d = *s;
 		}
 	}
 	else

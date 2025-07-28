@@ -6,7 +6,7 @@
 /*   By: mdchowdh <mdchowdh@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 18:18:21 by mdchowdh          #+#    #+#             */
-/*   Updated: 2025/07/21 15:35:26 by mdchowdh         ###   ########.fr       */
+/*   Updated: 2025/07/28 12:01:08 by mdchowdh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 int	ft_isalnum(int c)
 {
 	if (ft_isdigit(c) || ft_isalpha(c))
-			return (1);
+		return (1);
 	else
-			return (0);
+		return (0);
 }
 /* #include <stdio.h>
 #include <ctype.h>

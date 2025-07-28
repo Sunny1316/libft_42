@@ -6,10 +6,9 @@
 /*   By: mdchowdh <mdchowdh@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 16:47:20 by mdchowdh          #+#    #+#             */
-/*   Updated: 2025/07/21 15:54:31 by mdchowdh         ###   ########.fr       */
+/*   Updated: 2025/07/28 12:20:00 by mdchowdh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "libft.h"
 
@@ -23,7 +22,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (i < n)
 	{
 		if (*ps == (unsigned char)c)
-			return ((void*)ps);
+			return ((void *)ps);
 		ps++;
 		i++;
 	}

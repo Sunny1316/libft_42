@@ -6,7 +6,7 @@
 /*   By: mdchowdh <mdchowdh@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/20 16:12:41 by mdchowdh          #+#    #+#             */
-/*   Updated: 2025/07/20 16:14:20 by mdchowdh         ###   ########.fr       */
+/*   Updated: 2025/07/28 14:25:21 by mdchowdh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_putnbr_fd(int n, int fd)
 	if (n == -2147483648)
 	{
 		write(fd, "-2147483648", 11);
-		return;
+		return ;
 	}
 	if (n < 0)
 	{
