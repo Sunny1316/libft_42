@@ -6,7 +6,7 @@
 /*   By: mdchowdh <mdchowdh@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/20 16:12:41 by mdchowdh          #+#    #+#             */
-/*   Updated: 2025/07/28 14:25:21 by mdchowdh         ###   ########.fr       */
+/*   Updated: 2025/07/29 18:54:20 by mdchowdh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,28 @@
 void	ft_putnbr_fd(int n, int fd)
 {
 	char	c;
+	long	num;
 
-	if (n == -2147483648)
-	{
-		write(fd, "-2147483648", 11);
-		return ;
-	}
-	if (n < 0)
+	num = n;
+	if (num < 0)
 	{
 		write(fd, "-", 1);
-		n = -n;
+		num = -num;
 	}
-	if (n >= 10)
-		ft_putnbr_fd(n / 10, fd);
-	c = n % 10 + '0';
+	if (num >= 10)
+		ft_putnbr_fd(num / 10, fd);
+	c = num % 10 + '0';
 	write(fd, &c, 1);
 }
 /* int main(void)
 {
-	ft_putnbr_fd(42, 1);        // prints: 42
-	ft_putnbr_fd(-42, 1);       // prints: -42
-	ft_putnbr_fd(12345, 1);     // prints: 12345
-	ft_putnbr_fd(-2147483648, 1); // prints: -2147483648
+	ft_putnbr_fd(42, 1);
+	write(1, "\n", 1);
+	ft_putnbr_fd(-42, 1);
+	write(1, "\n", 1);
+	ft_putnbr_fd(12345, 1);
+	write(1, "\n", 1);
+	ft_putnbr_fd(-2147483648, 1);
+	write(1, "\n", 1);
 	return 0;
 } */
