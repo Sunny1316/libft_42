@@ -6,7 +6,7 @@
 #    By: mdchowdh <mdchowdh@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/16 10:21:30 by mdchowdh          #+#    #+#              #
-#    Updated: 2025/07/22 10:41:18 by mdchowdh         ###   ########.fr        #
+#    Updated: 2025/07/30 15:16:53 by mdchowdh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 RM = rm -f
- SRCS	= 	ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
+SRCS	= 	ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 			ft_isdigit.c ft_isprint.c ft_memchr.c ft_memcmp.c \
 			ft_memcpy.c ft_memmove.c ft_memset.c ft_strlcpy.c \
 			ft_strlen.c ft_strncmp.c ft_strnstr.c ft_tolower.c \
@@ -25,14 +25,13 @@ RM = rm -f
 			ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c \
 			ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 OBJS = $(SRCS:.c=.o)
-HEADER = libft.h
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
 
-%.o: %.c $(HEADER)
+.c.o:
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
