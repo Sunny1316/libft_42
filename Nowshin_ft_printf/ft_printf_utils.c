@@ -6,7 +6,7 @@
 /*   By: noyeasmi <noyeasmi@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 16:26:44 by noyeasmi          #+#    #+#             */
-/*   Updated: 2025/08/07 17:13:47 by noyeasmi         ###   ########.fr       */
+/*   Updated: 2025/08/08 13:52:50 by noyeasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 int	ft_putchar(char c)
 {
-	write(1, &c, 1);
-	return (1);
+	if(write(1, &c, 1) == -1)
+		return (-1);
+	return 1;
 }
 
 int	ft_putstr(char *s)
@@ -25,7 +26,10 @@ int	ft_putstr(char *s)
 	if (!s)
 		return (ft_putstr("(null)"));
 	while (s[i])
-		write(1, &s[i++], 1);
+	{
+		if(write(1, &s[i++], 1) == -1)
+			return -1;
+	}
 	return (i);
 }
 
@@ -75,22 +79,39 @@ int	ft_putptr(void *ptr)
 {
 	unsigned long	addr = (unsigned long)ptr;
 	int				len = 0;
-
-	len += ft_putstr("0x");
+	int result = 0;
+//case 1: Mac OS: 0x0
+//case 2: Linux : "nil"
+	if(ft_putstr("0x") == -1)
+		return -1;
+	// len += ft_putstr("0x");
 	if (addr == 0)
-		len += ft_putchar('0');
+		return ft_putstr(NULL_PTR);
 	else
-		len += ft_putptr_hex(addr);
-	return (len);
+		result = ft_putptr_hex(addr);
+		if(result == -1)
+			return -1;
+		len += result;
+	return (len + 2);
 }
 
 int	ft_putptr_hex(unsigned long n)
 {
 	int		len = 0;
+	int count;
 	char	*base = "0123456789abcdef";
 
 	if (n >= 16)
-		len += ft_putptr_hex(n / 16);
-	len += ft_putchar(base[n % 16]);
+	{
+		count =  ft_putptr_hex(n / 16);
+		if(count == -1)
+			return -1;
+		len += count;
+	}
+
+	if(ft_putchar(base[n % 16]) == -1)
+		return -1;
+	len++;
 	return (len);
 }
+

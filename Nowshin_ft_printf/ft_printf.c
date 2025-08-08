@@ -6,7 +6,7 @@
 /*   By: noyeasmi <noyeasmi@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 16:23:23 by noyeasmi          #+#    #+#             */
-/*   Updated: 2025/08/07 18:21:10 by noyeasmi         ###   ########.fr       */
+/*   Updated: 2025/08/08 13:33:37 by noyeasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,24 @@ int	ft_printf(const char *format, ...)
 	va_list	args;
 	int		i = 0;
 	int		printed = 0;
+	int count =0;
 
 	va_start(args, format);
 	while (format[i])
 	{
 		if (format[i] == '%' && format[i + 1])
 		{
-			printed += ft_handle_specifier(format[++i], args);
+			count = ft_handle_specifier(format[++i], args);
+			if(count == -1)
+				return -1;
+			printed += count;
 		}
 		else
 		{
-			ft_putchar(format[i]);
-			printed++;
+			count = ft_putchar(format[i]);
+			if(count == -1)
+				return -1;
+			printed += count;
 		}
 		i++;
 	}
