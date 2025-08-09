@@ -55,6 +55,8 @@ int main(void)
 	output_FT = ft_printf("FT -> I love %c\n", ltr);
 	printf("OUTPUT OG = %d\n", output_OG);
 	ft_printf("OUTPUT FT = %d\n", output_FT);
+	printf("OUTPUT OG = %c%c%c\n", 'a', '\t', 'b');
+	ft_printf("OUTPUT FT = %c%c%c\n", 'a', '\t', 'b');
 
 	ft_printf("\n");
 

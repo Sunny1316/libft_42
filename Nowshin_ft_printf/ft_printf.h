@@ -6,7 +6,7 @@
 /*   By: noyeasmi <noyeasmi@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 16:24:11 by noyeasmi          #+#    #+#             */
-/*   Updated: 2025/08/08 13:48:13 by noyeasmi         ###   ########.fr       */
+/*   Updated: 2025/08/09 11:06:18 by noyeasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <stdarg.h>
 # include <unistd.h>
-# include <stdio.h>
 
 # if defined(__linux__)
 # define NULL_PTR "(nil)"
@@ -24,7 +23,7 @@
 # endif
 
 int	ft_printf(const char *format, ...);
-int	ft_handle_specifier(char specifier, va_list args);
+int	ft_handle_specifier(char specifier, va_list *args);
 int	ft_putchar(char c);
 int	ft_putstr(char *s);
 int	ft_putnbr(int n);

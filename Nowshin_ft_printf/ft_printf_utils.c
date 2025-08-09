@@ -6,7 +6,7 @@
 /*   By: noyeasmi <noyeasmi@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 16:26:44 by noyeasmi          #+#    #+#             */
-/*   Updated: 2025/08/08 13:52:50 by noyeasmi         ###   ########.fr       */
+/*   Updated: 2025/08/09 13:02:33 by noyeasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,93 +14,131 @@
 
 int	ft_putchar(char c)
 {
-	if(write(1, &c, 1) == -1)
+	if (write(1, &c, 1) == -1)
 		return (-1);
-	return 1;
+	return (1);
 }
 
 int	ft_putstr(char *s)
 {
 	int	i = 0;
+	int	res;
 
 	if (!s)
 		return (ft_putstr("(null)"));
 	while (s[i])
 	{
-		if(write(1, &s[i++], 1) == -1)
-			return -1;
+		res = write(1, &s[i], 1);
+		if (res == -1)
+			return (-1);
+		i++;
 	}
 	return (i);
 }
 
 int	ft_putnbr(int n)
 {
-	long	nb = n;
-	int		len = 0;
+    long    nb = n;
+    int     len = 0;
+    int     res;
 
-	if (nb < 0)
-	{
-		len += ft_putchar('-');
-		nb = -nb;
-	}
-	if (nb >= 10)
-		len += ft_putnbr(nb / 10);
-	len += ft_putchar(nb % 10 + '0');
-	return (len);
+    if (nb < 0)
+    {
+        res = ft_putchar('-');
+        if (res == -1)
+            return (-1);
+        len += res;
+        nb = -nb;
+    }
+    if (nb >= 10)
+    {
+        res = ft_putnbr(nb / 10);
+        if (res == -1)
+            return (-1);
+        len += res;
+    }
+    res = ft_putchar((nb % 10) + '0');
+    if (res == -1)
+        return (-1);
+    len += res;
+    return (len);
 }
 
 int	ft_puthex(unsigned int n, char format)
 {
-	char	*base;
-	int		len = 0;
+    char    *base;
+    int     len;
+    int     res;
 
-	if (format == 'x')
-		base = "0123456789abcdef";
-	else if (format == 'X')
-		base = "0123456789ABCDEF";
-	else
-		return (0);
-	if (n >= 16)
-		len += ft_puthex(n / 16, format);
-	len += ft_putchar(base[n % 16]);
-	return (len);
+    len = 0;
+    if (format == 'x')
+        base = "0123456789abcdef";
+    else if (format == 'X')
+        base = "0123456789ABCDEF";
+    else
+        return (0);
+    if (n >= 16)
+    {
+        res = ft_puthex(n / 16, format);
+        if (res == -1)
+            return (-1);
+        len += res;
+    }
+    res = ft_putchar(base[n % 16]);
+    if (res == -1)
+        return (-1);
+    len += res;
+    return (len);
 }
 
 int	ft_putunbr(unsigned int n)
 {
-	int	len = 0;
+    int len;
+    int res;
 
-	if (n >= 10)
-		len += ft_putunbr(n / 10);
-	len += ft_putchar(n % 10 + '0');
-	return (len);
+    len = 0;
+    if (n >= 10)
+    {
+        res = ft_putunbr(n / 10);
+        if (res == -1)
+            return (-1);
+        len += res;
+    }
+    res = ft_putchar((n % 10) + '0');
+    if (res == -1)
+        return (-1);
+    len += res;
+    return (len);
 }
 int	ft_putptr(void *ptr)
 {
-	unsigned long	addr = (unsigned long)ptr;
-	int				len = 0;
-	int result = 0;
-//case 1: Mac OS: 0x0
-//case 2: Linux : "nil"
-	if(ft_putstr("0x") == -1)
-		return -1;
-	// len += ft_putstr("0x");
+	unsigned long	addr;
+	int				len;
+	int				res;
+
+    addr = (unsigned long)ptr;
+    len = 0;
 	if (addr == 0)
 		return ft_putstr(NULL_PTR);
-	else
-		result = ft_putptr_hex(addr);
-		if(result == -1)
-			return -1;
-		len += result;
-	return (len + 2);
+	res = ft_putstr("0x");
+	if (res == -1)
+		return -1;
+	len += res;
+    res = ft_putptr_hex(addr);
+	if (res == -1)
+		return -1;
+	len += res;
+    return (len);
 }
 
 int	ft_putptr_hex(unsigned long n)
 {
-	int		len = 0;
-	int count;
-	char	*base = "0123456789abcdef";
+	int		    len;
+	int         count;
+	const char	*base;
 
+    len = 0;
+    base = "0123456789abcdef";
 	if (n >= 16)
 	{
 		count =  ft_putptr_hex(n / 16);

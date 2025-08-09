@@ -6,7 +6,7 @@
 /*   By: noyeasmi <noyeasmi@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 16:23:23 by noyeasmi          #+#    #+#             */
-/*   Updated: 2025/08/08 13:33:37 by noyeasmi         ###   ########.fr       */
+/*   Updated: 2025/08/09 12:41:00 by noyeasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,27 @@
 
 int	ft_printf(const char *format, ...)
 {
-	va_list	args;
+	va_list	ap;
 	int		i = 0;
 	int		printed = 0;
 	int count =0;
 
-	va_start(args, format);
+	va_start(ap, format);
 	while (format[i])
 	{
 		if (format[i] == '%' && format[i + 1])
 		{
-			count = ft_handle_specifier(format[++i], args);
-			if(count == -1)
-				return -1;
-			printed += count;
+			i++;
+			count = ft_handle_specifier(format[i], &ap);
 		}
 		else
-		{
 			count = ft_putchar(format[i]);
-			if(count == -1)
-				return -1;
-			printed += count;
-		}
+		if(count == -1)
+			return (-1);
+		printed += count;
 		i++;
 	}
-	va_end(args);
+	va_end(ap);
 	return (printed);
 }
 /* {
